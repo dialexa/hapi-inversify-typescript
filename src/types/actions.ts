@@ -1,4 +1,4 @@
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 import { IUser } from 'src/types/user';
 
 interface IAction<S, T> {

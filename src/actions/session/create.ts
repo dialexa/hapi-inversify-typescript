@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 import { InvalidPasswordError, NotConfirmedError, NotFoundError } from 'src/errors';
 import { ICreateAuthTokenAction, ICreateSessionAction, IFindUserAction } from 'src/types/actions';
 
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 import { IKairos} from 'src/types/core';
 
 import AuthTokenTypes from 'src/actions/auth-token/types';

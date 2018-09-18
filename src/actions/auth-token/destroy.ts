@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 import { IDestroyAuthTokenAction } from 'src/types/actions';
 
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 
 import RepositoryTypes from 'src/repositories/types';
 

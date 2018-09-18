@@ -6,7 +6,7 @@ import container from 'src/container';
 import plugins from 'src/plugins';
 import routes from 'src/routes';
 
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 
 export default class Server {
   private server: HapiServer;

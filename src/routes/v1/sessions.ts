@@ -6,7 +6,7 @@ import AuthTokenTypes from 'src/actions/auth-token/types';
 import SessionTypes from 'src/actions/session/types';
 
 import { ICreateSessionAction, IDestroyAuthTokenAction } from 'src/types/actions';
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 
 import { InvalidPasswordError, NotConfirmedError, NotFoundError } from 'src/errors';
 

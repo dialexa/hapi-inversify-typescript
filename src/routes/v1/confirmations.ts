@@ -23,10 +23,12 @@ const routes: Route[] = [{
       const container = req.container();
       const action = container.get<IConfirmUserAction>(ConfirmationTypes.ConfirmUserAction);
 
-      const token = _.get(req.query, 'token');
+      const confirmationToken = _.get(req.query, 'token');
 
       try {
-        await action.execute(token);
+        const authToken = await action.execute(confirmationToken);
+
+        req.cookieAuth.set(authToken);
 
         return h.response().code(200);
       } catch (err) {

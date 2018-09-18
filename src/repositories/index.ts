@@ -6,7 +6,7 @@ import { AuditableRepository, IRepository, Repository } from '@dialexa/knex-plus
 import AuthTokenRepository from 'src/repositories/auth-token';
 import UserRepository from 'src/repositories/user';
 
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 import { IUser } from 'src/types/user';
 
 import Types from 'src/repositories/types';

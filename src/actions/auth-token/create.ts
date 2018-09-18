@@ -7,7 +7,7 @@ import { inject, injectable } from "inversify";
 import { SystemConfig } from 'src/config';
 
 import { ICreateAuthTokenAction } from 'src/types/actions';
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 import { IKairos} from 'src/types/core';
 import { IUser } from 'src/types/user';
 

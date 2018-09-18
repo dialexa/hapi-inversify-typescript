@@ -5,7 +5,7 @@ import { Repository } from '@dialexa/knex-plus';
 import * as Knex from 'knex';
 
 import Types from 'src/core/types';
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 
 
 @injectable()

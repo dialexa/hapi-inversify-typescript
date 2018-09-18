@@ -7,7 +7,7 @@ import { NotFoundError } from 'src/errors';
 
 import { IConfirmUserAction, ICreateAuthTokenAction, IFindUserAction } from 'src/types/actions';
 
-import { IAuthToken } from 'src/types/auth';
+import { IAuthToken } from 'src/types/auth-token';
 import { IUser } from 'src/types/user';
 
 import AuthTokenTypes from 'src/actions/auth-token/types';
