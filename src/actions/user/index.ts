@@ -3,16 +3,15 @@ import "reflect-metadata";
 import { Container } from 'inversify';
 
 import {
-  IFindUserAction,
-  IRegisterUserAction
+  ICreateUserAction,
+  IFindUserAction
 } from 'src/types/actions';
 
-import FindUserAction from 'src/actions/user/find';
-import RegisterUserAction from 'src/actions/user/register';
-
-import Types from 'src/actions/user/types';
+import CreateUserAction from './create';
+import FindUserAction from './find';
+import Types from './types';
 
 export const bind = (container: Container) => {
+  container.bind<ICreateUserAction>(Types.CreateUserAction).to(CreateUserAction).inRequestScope();
   container.bind<IFindUserAction>(Types.FindUserAction).to(FindUserAction).inRequestScope();
-  container.bind<IRegisterUserAction>(Types.RegisterUserAction).to(RegisterUserAction).inRequestScope();
 }

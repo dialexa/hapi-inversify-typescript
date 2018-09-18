@@ -4,7 +4,7 @@ import { inject, injectable } from "inversify";
 import * as _ from 'lodash';
 
 import { InvalidPasswordError, NotConfirmedError, NotFoundError } from 'src/errors';
-import { ICreateAuthTokenAction, IFindUserAction, ILoginAction } from 'src/types/actions';
+import { ICreateAuthTokenAction, ICreateSessionAction, IFindUserAction } from 'src/types/actions';
 
 import { IAuthToken } from 'src/types/auth';
 import { IKairos} from 'src/types/core';
@@ -14,7 +14,7 @@ import UserTypes from 'src/actions/user/types';
 import CoreTypes from 'src/core/types';
 
 @injectable()
-export default class LoginAction implements ILoginAction {
+export default class CreateSessionAction implements ICreateSessionAction {
   @inject(CoreTypes.Kairos)
   private readonly kairos: IKairos;
 

@@ -5,7 +5,8 @@ import * as Joi from 'joi';
 import AuthTokenTypes from 'src/actions/auth-token/types';
 import SessionTypes from 'src/actions/session/types';
 
-import { IDestroyAuthTokenAction, ILoginAction } from 'src/types/actions';
+import { ICreateSessionAction, IDestroyAuthTokenAction } from 'src/types/actions';
+import { IAuthToken } from 'src/types/auth';
 
 import { InvalidPasswordError, NotConfirmedError, NotFoundError } from 'src/errors';
 
@@ -31,7 +32,7 @@ const routes: Route[] = [
       },
       handler: async (req: Request, h: ResponseToolkit) => {
         const container = req.container();
-        const action = container.get<ILoginAction>(SessionTypes.LoginAction);
+        const action = container.get<ICreateSessionAction>(SessionTypes.CreateSessionAction);
 
         try {
           const authToken = await action.execute(req.payload as ILoginPayload);
@@ -57,7 +58,7 @@ const routes: Route[] = [
         const container = req.container();
         const action = container.get<IDestroyAuthTokenAction>(AuthTokenTypes.DestroyAuthTokenAction);
 
-        await action.execute(req.auth.credentials);
+        await action.execute(req.auth.credentials as IAuthToken);
         req.cookieAuth.clear();
 
         return h.response().code(204);

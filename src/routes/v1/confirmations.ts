@@ -3,7 +3,7 @@ import { Request, RequestQuery, ResponseToolkit, ServerRoute as Route } from 'ha
 import * as Joi from 'joi';
 import * as _ from 'lodash';
 
-import Types from 'src/actions/user/types';
+import ConfirmationTypes from 'src/actions/confirmation/types';
 import { IConfirmUserAction } from 'src/types/actions';
 
 import { NotFoundError } from 'src/errors';
@@ -21,7 +21,7 @@ const routes: Route[] = [{
     },
     handler: async (req: Request, h: ResponseToolkit) => {
       const container = req.container();
-      const action = container.get<IConfirmUserAction>(Types.ConfirmUserAction);
+      const action = container.get<IConfirmUserAction>(ConfirmationTypes.ConfirmUserAction);
 
       const token = _.get(req.query, 'token');
 

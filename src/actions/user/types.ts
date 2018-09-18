@@ -1,5 +1,5 @@
 export default {
-  ConfirmUserAction: Symbol.for('ConfirmUserAction'),
+  CreateUserAction: Symbol.for('CreateUserAction'),
   FindUserAction: Symbol.for('FindUserAction'),
   RegisterUserAction: Symbol.for('RegisterUserAction')
 }

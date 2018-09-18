@@ -4,15 +4,15 @@ import { Container } from 'inversify';
 
 import {
   IAuthenticateAction,
-  ILoginAction
+  ICreateSessionAction
 } from 'src/types/actions';
 
 import AuthenticateAction from './authenticate';
-import LoginAction from './login';
+import CreateSessionAction from './create';
 
 import Types from './types';
 
 export const bind = (container: Container) => {
   container.bind<IAuthenticateAction>(Types.AuthenticateAction).to(AuthenticateAction).inRequestScope();
-  container.bind<ILoginAction>(Types.LoginAction).to(LoginAction).inRequestScope();
+  container.bind<ICreateSessionAction>(Types.CreateSessionAction).to(CreateSessionAction).inRequestScope();
 }
