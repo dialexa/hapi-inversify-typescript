@@ -1,0 +1,84 @@
+{
+  "name": "hapi-inversify-typescript",
+  "version": "1.0.0",
+  "description": "HapiJS + InversifyJS w/ Typescript",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dialexa/hapi-inversify-typescript.git"
+  },
+  "author": "Luke Gordon <luke@dialexa.com> (https://dialexa.com)",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/dialexa/hapi-inversify-typescript/issues"
+  },
+  "homepage": "https://github.com/dialexa/hapi-inversify-typescript#readme",
+  "scripts": {
+    "build": "node_modules/.bin/webpack",
+    "db:create": "NODE_ENV=$NODE_ENV ts-node scripts/db-create",
+    "lint": "node_modules/.bin/tslint --project .",
+    "lint:fix": "node_modules/.bin/tslint --fix --project .",
+    "migrate:latest": "node_modules/.bin/knex migrate:latest",
+    "migrate:make": "node_modules/.bin/knex migrate:make",
+    "migrate:rollback": "node_modules/.bin/knex migrate:rollback",
+    "prepare": "patch-package",
+    "rebuild": "bin/rebuild.sh",
+    "reset": "bin/reset.sh",
+    "restart": "bin/restart.sh",
+    "seed:make": "NODE_ENV=$NODE_ENV node_modules/.bin/knex seed:make",
+    "seed:run": "NODE_ENV=$NODE_ENV node -r tsconfig-paths/register node_modules/.bin/knex seed:run",
+    "start": "node dist/server.js",
+    "start:dev": "node_modules/.bin/nodemon"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn lint",
+      "yarn prettier",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@dialexa/knex-plus": "~0.2.3",
+    "boom": "~7.2.0",
+    "date-fns": "~1.29.0",
+    "hapi": "~17.5.4",
+    "hapi-auth-cookie": "~9.0.0",
+    "hapi-swagger": "~9.1.1",
+    "inert": "~5.1.0",
+    "inversify": "~4.13.0",
+    "joi": "~13.6.0",
+    "knex": "~0.15.2",
+    "lodash": "~4.17.11",
+    "pg": "~7.4.3",
+    "reflect-metadata": "~0.1.12",
+    "vision": "~5.4.0"
+  },
+  "devDependencies": {
+    "@types/boom": "~7.2.0",
+    "@types/hapi": "~17.0.19",
+    "@types/joi": "~13.4.5",
+    "@types/knex": "~0.14.24",
+    "@types/lodash": "~4.14.116",
+    "@types/node": "~10.10.1",
+    "fork-ts-checker-webpack-plugin": "~0.4.9",
+    "happypack": "~5.0.0",
+    "husky": "~0.14.3",
+    "lint-staged": "~7.2.2",
+    "nodemon": "~1.18.4",
+    "patch-package": "~5.1.1",
+    "postinstall-prepare": "~1.0.1",
+    "prettier": "~1.14.2",
+    "source-map-support": "~0.5.9",
+    "ts-loader": "~5.1.1",
+    "ts-node": "~7.0.1",
+    "tsconfig-paths": "~3.6.0",
+    "tsconfig-paths-webpack-plugin": "~3.2.0",
+    "tslint": "~5.11.0",
+    "tslint-config-prettier": "~1.15.0",
+    "tslint-sonarts": "~1.8.0",
+    "typescript": "~3.0.3",
+    "webpack": "~4.19.0",
+    "webpack-cli": "~3.1.0",
+    "webpack-node-externals": "~1.7.2"
+  }
+}
