@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 import { SystemConfig } from 'src/config';
 import { NotFoundError } from 'src/errors';
 
-import { IRefreshAuthTokenAction } from 'src/types/actions';
+import { IRefreshAuthTokenAction } from 'src/types/auth-token';
 import { IAuthToken } from 'src/types/auth-token';
 
 import RepositoryTypes from 'src/repositories/types';

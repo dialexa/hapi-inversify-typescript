@@ -6,7 +6,7 @@ import {
   ICreateAuthTokenAction,
   IDestroyAuthTokenAction,
   IRefreshAuthTokenAction
-} from 'src/types/actions';
+} from 'src/types/auth-token';
 
 import CreateAuthTokenAction from './create';
 import DestroyAuthTokenAction from './destroy';

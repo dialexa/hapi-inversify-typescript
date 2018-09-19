@@ -5,7 +5,7 @@ import { Container } from 'inversify';
 import {
   IAuthenticateAction,
   ICreateSessionAction
-} from 'src/types/actions';
+} from 'src/types/auth';
 
 import AuthenticateAction from './authenticate';
 import CreateSessionAction from './create';

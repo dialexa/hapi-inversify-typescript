@@ -3,9 +3,8 @@ import "reflect-metadata";
 import { IRepository } from '@dialexa/knex-plus';
 import { inject, injectable } from "inversify";
 
-import { ICreateUserAction } from 'src/types/actions';
 import { IKairos} from 'src/types/core';
-import { IUser } from 'src/types/user';
+import { ICreateUserAction, ICreateUserParams, IUser } from 'src/types/user';
 
 import CoreTypes from 'src/core/types';
 import RepositoryTypes from 'src/repositories/types';
@@ -18,7 +17,7 @@ export default class CreateUserAction implements ICreateUserAction {
   @inject(RepositoryTypes.UserRepository)
   private readonly userRepository: IRepository<IUser>;
 
-  public async execute (params: { email: string, username: string, password: string }): Promise<IUser> {
+  public async execute (params: ICreateUserParams): Promise<IUser> {
     const { email, username, password } = params;
     // Encrypt the password
     const { salt, secret } = await this.kairos.encrypt(password);

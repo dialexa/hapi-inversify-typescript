@@ -1,10 +1,10 @@
 import * as Boom from 'boom';
-import { Request, RequestQuery, ResponseToolkit, ServerRoute as Route } from 'hapi';
+import { Request, ResponseToolkit, ServerRoute as Route } from 'hapi';
 import * as Joi from 'joi';
 import * as _ from 'lodash';
 
 import ConfirmationTypes from 'src/actions/confirmation/types';
-import { IConfirmUserAction } from 'src/types/actions';
+import { IConfirmUserAction } from 'src/types/confirmation';
 
 import { NotFoundError } from 'src/errors';
 

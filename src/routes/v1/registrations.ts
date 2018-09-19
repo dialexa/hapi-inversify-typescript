@@ -2,8 +2,8 @@ import * as Boom from 'boom';
 import { Request, ResponseToolkit, ServerRoute as Route } from 'hapi';
 import * as Joi from 'joi';
 
-import Types from 'src/actions/user/types';
-import { IRegisterUserAction } from 'src/types/actions';
+import Types from 'src/actions/registration/types';
+import { IRegisterUserAction } from 'src/types/registration';
 
 import { AlreadyExistsError } from 'src/errors';
 

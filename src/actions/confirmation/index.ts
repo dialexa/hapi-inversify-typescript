@@ -2,7 +2,7 @@ import "reflect-metadata";
 
 import { Container } from 'inversify';
 
-import { IConfirmUserAction } from 'src/types/actions';
+import { IConfirmUserAction } from 'src/types/confirmation';
 
 import ConfirmUserAction from './confirm';
 import Types from './types';

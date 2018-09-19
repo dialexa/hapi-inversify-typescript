@@ -4,7 +4,10 @@ import { inject, injectable } from "inversify";
 import * as _ from 'lodash';
 
 import { InvalidPasswordError, NotConfirmedError, NotFoundError } from 'src/errors';
-import { ICreateAuthTokenAction, ICreateSessionAction, IFindUserAction } from 'src/types/actions';
+
+import { ICreateSessionAction } from 'src/types/auth';
+import { ICreateAuthTokenAction } from 'src/types/auth-token';
+import { IFindUserAction } from 'src/types/user';
 
 import { IAuthToken } from 'src/types/auth-token';
 import { IKairos} from 'src/types/core';

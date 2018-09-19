@@ -3,17 +3,18 @@ import "reflect-metadata";
 import { inject, injectable } from "inversify";
 
 import { AlreadyExistsError } from 'src/errors';
-import { ICreateUserAction, IFindUserAction, IRegisterUserAction } from 'src/types/actions';
+import { IRegisterUserAction } from 'src/types/registration';
+import { ICreateUserAction, IFindUserAction } from 'src/types/user';
 
 import UserTypes from 'src/actions/user/types';
 
 @injectable()
 export default class RegisterUserAction implements IRegisterUserAction {
-  @inject(UserTypes.FindUserAction)
-  private readonly findUserAction: IFindUserAction;
-
   @inject(UserTypes.CreateUserAction)
   private readonly createUserAction: ICreateUserAction;
+
+  @inject(UserTypes.FindUserAction)
+  private readonly findUserAction: IFindUserAction;
 
   public async execute (params: { email: string, username: string, password: string }): Promise<void> {
     const { email, username, password } = params;

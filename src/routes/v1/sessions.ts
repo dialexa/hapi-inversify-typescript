@@ -5,7 +5,8 @@ import * as Joi from 'joi';
 import AuthTokenTypes from 'src/actions/auth-token/types';
 import SessionTypes from 'src/actions/session/types';
 
-import { ICreateSessionAction, IDestroyAuthTokenAction } from 'src/types/actions';
+import { ICreateSessionAction } from 'src/types/auth';
+import { IDestroyAuthTokenAction } from 'src/types/auth-token';
 import { IAuthToken } from 'src/types/auth-token';
 
 import { InvalidPasswordError, NotConfirmedError, NotFoundError } from 'src/errors';
